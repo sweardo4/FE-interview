@@ -39,9 +39,9 @@
                 只要修改DOM或修改了元素的形状或大小，就会触发Reflow，单纯修改元素的颜色只需Repaint一下（调用操作系统Native
                 GUI的API绘制）。
 
-2.  浏览器缓存技术
+        2.  浏览器缓存技术
 
-    1.  常见浏览器内核
+    3.  常见浏览器内核
 
         1.  Trident内核：IE,MaxThon,TT,The Word,360,搜狗浏览器等
 
@@ -51,7 +51,7 @@
 
         4.  Webkit内核：Safari,Chrome等[Chrome的:Blink(Webkit的分支)]
 
-    2.  语义化
+    4.  语义化
 
         1.  用正确的标签做正确的事情
 
@@ -63,13 +63,13 @@
 
         5.  使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解
 
-    3.  渐进增强和优雅降级
+    5.  渐进增强和优雅降级
 
         1.  渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能，达到更好的用户体验
 
         2.  优雅降级：一开始就构建完整的功能，然后再针对低版本的浏览器进行兼容
 
-    4.  defer和async的区别
+    6.  defer和async的区别
 
         1.  defer：此布尔属性被设置为向浏览器指示脚本在文档被解析后执行。
 
@@ -128,7 +128,7 @@
 
             1.  style class id title data-\*等等
 
-3.  Css
+2.  Css
 
     1.  Css
 
@@ -218,9 +218,9 @@
 
     3.  Css优化，提高性能
 
-4.  Scss
+3.  Scss
 
-5.  Webpack
+4.  Webpack
 
     1.  Webpack基本用法
 
@@ -228,7 +228,7 @@
 
     3.  打包速度优化
 
-6.  JavaScript
+5.  JavaScript
 
     1.  Es3
 
@@ -340,7 +340,7 @@
 
     8.  模块化发展历程
 
-7.  Dom
+6.  Dom
 
     1.  节点操作
 
@@ -358,11 +358,11 @@
 
             2.  自定义事件
 
-8.  Jquery
+7.  Jquery
 
-9.  Typescript
+8.  Typescript
 
-10. Vue
+9.  Vue
 
     1.  Vue
 
@@ -448,7 +448,7 @@
 
         2.  Nuxt.js
 
-11. React
+10. React
 
     1.  React
 
@@ -466,7 +466,7 @@
 
     5.  react后端渲染
 
-12. http
+11. http
 
     1.  三次握手
 
@@ -484,13 +484,13 @@
 
     3.  状态码
 
-13. Websocket
+12. Websocket
 
     1.  Websocket在vue中的应用
 
     2.  Websocket在react中的应用
 
-14. node
+13. node
 
     1.  node
 
@@ -502,24 +502,24 @@
 
     3.  express
 
-15. SEO
+14. SEO
 
     1.  前后端不分离
 
     2.  前后端分离
 
-16. mysql
+15. mysql
 
     1.  存储模式
 
-17. Redis
+16. Redis
 
-18. 服务器
+17. 服务器
 
     1.  Nginx
 
-19. Git
+18. Git
 
-20. web安全
+19. web安全
 
-21. docker
+20. docker
