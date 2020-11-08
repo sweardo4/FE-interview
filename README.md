@@ -4,25 +4,131 @@
 
         1.  Html加载原理
 
-        2.  语义化
+        2.  块级元素
 
-        3.  块级元素
+            1.  a span img input select
 
-        4.  行内元素
+        3.  行内元素
 
-        5.  通用布局方法
+            1.  div ul ol li dl dt dd h1 p
 
-            1.  媒体查询
+        4.  空元素
 
-            2.  动态盒子模型
+            1.  \<br\> \<hr\> \<link\> \<meta\>
 
     2.  Html5
 
+        ![](e8bc40d7006f13fa0a191d774b7db36a_r.jpg)
+
         1.  浏览器加载原理
 
-        2.  浏览器缓存技术
+            1.  首先，开源浏览器一般以8k每块下载html页面。
 
-2.  Css
+                然后解析页面生成DOM树，遇到css标签或JS脚本标签就新起线程去下载他们，并继续构建DOM。
+
+                下载完后解析CSS为CSS规则树，浏览器结合CSS规则树和DOM树生成Render
+                Tree。注意：构建CSS Object Model（CSSOM)会阻塞JavaScript的执行。
+
+                JavaScript的执行也会阻塞DOM的构建。
+
+                JavaScript下载后可以通过DOM API修改DOM，通过CSSOM
+                API修改样式作用域Render Tree。
+
+                每次修改会造成Render Tree的重新布局和重绘。
+
+                只要修改DOM或修改了元素的形状或大小，就会触发Reflow，单纯修改元素的颜色只需Repaint一下（调用操作系统Native
+                GUI的API绘制）。
+
+2.  浏览器缓存技术
+
+    1.  常见浏览器内核
+
+        1.  Trident内核：IE,MaxThon,TT,The Word,360,搜狗浏览器等
+
+        2.  Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等
+
+        3.  Presto内核：Opera7及以上[现为：Blink]
+
+        4.  Webkit内核：Safari,Chrome等[Chrome的:Blink(Webkit的分支)]
+
+    2.  语义化
+
+        1.  用正确的标签做正确的事情
+
+        2.  让页面的内容结构化，结构更清晰，便于对浏览器，搜索引擎解析
+
+        3.  即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的
+
+        4.  搜索引擎的爬虫也依赖于HTML标记确定上下文和各个关键字的权重，利于SEO
+
+        5.  使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解
+
+    3.  渐进增强和优雅降级
+
+        1.  渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能，达到更好的用户体验
+
+        2.  优雅降级：一开始就构建完整的功能，然后再针对低版本的浏览器进行兼容
+
+    4.  defer和async的区别
+
+        1.  defer：此布尔属性被设置为向浏览器指示脚本在文档被解析后执行。
+
+            1.  对于defer，我们可以认为是将外链的js放在了页面底部。js的加载不会阻塞页面的渲染和资源的加载。不过defer会按照原本的js的顺序执行，所以如果前后有依赖关系的js可以放心使用
+
+        2.  async：设置此布尔属性，以指示浏览器如果可能的话，应异步执行脚本。
+
+            1.  对于async，这个是html5中新增的属性，它的作用是能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行在有async的情况下，js一旦下载好了就会执行，所以很有可能不是按照原本的顺序来执行的。如果js前后有依赖性，用async，就很有可能出错。
+
+        3.  两个属性会有三种可能的情况
+
+            1.  如果async为true，那么脚本在下载完成后异步执行。
+
+            2.  如果async为false，defer为true，那么脚本会在页面解析完毕之后执行。
+
+            3.  如果async和defer都为false，那么脚本会在页面解析中，停止页面解析，立刻下载并且执行。
+
+        4.  alt 和title的区别
+
+            1.  alt是\<img\>标签的特有属性，当图片加载失败时显示alt文字
+
+            2.  title属性是global
+                attribute之一，作用是提供建议性的信息，通常是鼠标滑动到元素上是显示
+
+        5.  DOCTYPE 作用
+
+            1.  DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证
+
+            2.  HTML4.01的doctype
+
+                1.  在HTML4.01中，\<!DOCTYPE\>声明引用DTD，因为HTML4.01基于SGML。DTD规定了标记语言的规则，这样浏览器才能正确的呈现内容。在HTML4.01中有三种\<!DOCTYPE\>声明。
+
+                2.  严格模式
+
+                    1.  \<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                        "http://www.w3.org/TR/html4/strict.dtd"\>
+
+                3.  过渡模式：
+
+                    2.  \<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
+                        Transitional//EN"
+                        "http://www.w3.org/TR/html4/loose.dtd"\>
+
+                4.  框架模式：
+
+                    3.  \<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01
+                        Frameset//EN"
+                        "http://www.w3.org/TR/html4/frameset.dtd"\>
+
+            3.  HTML5的doctype
+
+                5.  HTML5不基于SGML，所以不需要引用DTD。在HTML5中\<!DOCTYPE\>只有一种\<！DOCTYPE
+                    html\>
+
+        6.  global attribute
+
+            1.  style class id title data-\*等等
+
+3.  Css
 
     1.  Css
 
@@ -48,19 +154,19 @@
 
             2.  浮动
 
-                1.  元素浮动，脱离文档流，不脱离文本流，位置尽量靠上，并靠左或右
+                6.  元素浮动，脱离文档流，不脱离文本流，位置尽量靠上，并靠左或右
 
-                2.  清除浮动
+                7.  清除浮动
 
             3.  绝对定位position
 
-                3.  Static
+                8.  Static
 
-                4.  Relative
+                9.  Relative
 
-                5.  Absolute
+                10. Absolute
 
-                6.  Fixed
+                11. Fixed
 
         5.  Display
 
@@ -80,9 +186,9 @@
 
             8.  Flex
 
-                7.  作用在flex容器上
+                12. 作用在flex容器上
 
-                8.  作用在flex子项上
+                13. 作用在flex子项上
 
         6.  透明
 
@@ -112,9 +218,9 @@
 
     3.  Css优化，提高性能
 
-3.  Scss
+4.  Scss
 
-4.  Webpack
+5.  Webpack
 
     1.  Webpack基本用法
 
@@ -122,7 +228,7 @@
 
     3.  打包速度优化
 
-5.  JavaScript
+6.  JavaScript
 
     1.  Es3
 
@@ -130,13 +236,11 @@
 
             1.  值类型
 
-                9.  Boolean， number，string，null，undefined，symbol（es6新加）
+                14. Boolean， number，string，null，undefined，symbol（es6新加）
 
             2.  引用类型
 
-                10. Object
-
-                    1.  内置对象
+                15. Object
 
         2.  类型判断方法
 
@@ -166,11 +270,7 @@
 
         13. 正则表达式
 
-        14. New 操作符理解
-
     2.  Es5
-
-        1.  新增API
 
     3.  Es6
 
@@ -194,9 +294,7 @@
 
         7.  函数
 
-        8.  模块化
-
-        9.  Set，map，weakmap，weakset
+        8.  Set，map，weakmap，weakset
 
     4.  Es7
 
@@ -222,19 +320,13 @@
 
         9.  函数柯里化
 
-        10. 简单实现call，apply，bind
-
-        11. 实现promise
-
-        12. 简单实现async/await中的async函数
-
     6.  Js事件循环机制
 
     7.  XHR，ajax和fetch的区别
 
     8.  模块化发展历程
 
-6.  Dom
+7.  Dom
 
     1.  节点操作
 
@@ -252,11 +344,11 @@
 
             2.  自定义事件
 
-7.  Jquery
+8.  Jquery
 
-8.  Typescript
+9.  Typescript
 
-9.  Vue
+10. Vue
 
     1.  Vue
 
@@ -296,13 +388,13 @@
 
             1.  Extend，extends和mixin的区别
 
-                11. extend用于创建vue实例
+                16. extend用于创建vue实例
 
-                12. mixins可以混入多个mixin，extends只能继承一个
+                17. mixins可以混入多个mixin，extends只能继承一个
 
-                13. mixins类似于面向切面的编程（AOP），extends类似于面向对象的编程
+                18. mixins类似于面向切面的编程（AOP），extends类似于面向对象的编程
 
-                14. 优先级Vue.extend\>extends\>mixins
+                19. 优先级Vue.extend\>extends\>mixins
 
             2.  Object.defineProperty和proxy
 
@@ -336,13 +428,7 @@
 
         4.  路由跳转
 
-    4.  Vue后端渲染VUE SSR
-
-        1.  Vue-server-renderer
-
-        2.  Nuxt.js
-
-10. React
+11. React
 
     1.  React
 
@@ -358,9 +444,7 @@
 
     4.  Flux
 
-    5.  react后端渲染
-
-11. http
+12. http
 
     1.  三次握手
 
@@ -378,13 +462,13 @@
 
     3.  状态码
 
-12. Websocket
+13. Websocket
 
     1.  Websocket在vue中的应用
 
     2.  Websocket在react中的应用
 
-13. node
+14. node
 
     1.  node
 
@@ -395,12 +479,6 @@
     2.  koa2
 
     3.  express
-
-14. SEO
-
-    1.  前后端不分离
-
-    2.  前后端分离
 
 15. mysql
 
@@ -415,5 +493,9 @@
 18. Git
 
 19. web安全
+
+    1.  CSRF 攻击
+
+    2.  XSS
 
 20. docker
