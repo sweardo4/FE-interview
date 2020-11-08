@@ -242,6 +242,8 @@
 
                 15. Object
 
+                    4.  内置对象
+
         2.  类型判断方法
 
             1.  Typeof 或精确判断使用Object.prototype,toString.call(param)
@@ -270,7 +272,11 @@
 
         13. 正则表达式
 
+        14. New 操作符理解
+
     2.  Es5
+
+        1.  新增API
 
     3.  Es6
 
@@ -294,7 +300,9 @@
 
         7.  函数
 
-        8.  Set，map，weakmap，weakset
+        8.  模块化
+
+        9.  Set，map，weakmap，weakset
 
     4.  Es7
 
@@ -319,6 +327,12 @@
         8.  深拷贝
 
         9.  函数柯里化
+
+        10. 简单实现call，apply，bind
+
+        11. 实现promise
+
+        12. 简单实现async/await中的async函数
 
     6.  Js事件循环机制
 
@@ -428,6 +442,12 @@
 
         4.  路由跳转
 
+    4.  Vue后端渲染VUE SSR
+
+        1.  Vue-server-renderer
+
+        2.  Nuxt.js
+
 11. React
 
     1.  React
@@ -443,6 +463,8 @@
     3.  React-router
 
     4.  Flux
+
+    5.  react后端渲染
 
 12. http
 
@@ -480,22 +502,24 @@
 
     3.  express
 
-15. mysql
+15. SEO
+
+    1.  前后端不分离
+
+    2.  前后端分离
+
+16. mysql
 
     1.  存储模式
 
-16. Redis
+17. Redis
 
-17. 服务器
+18. 服务器
 
     1.  Nginx
 
-18. Git
+19. Git
 
-19. web安全
+20. web安全
 
-    1.  CSRF 攻击
-
-    2.  XSS
-
-20. docker
+21. docker
