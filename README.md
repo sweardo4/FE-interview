@@ -466,6 +466,21 @@
 
     5.  react后端渲染
 
+    6.  hook 函数开发组件，完全不使用class 那一套, react 未来
+
+        1. useState 状态钩子
+        
+            用于函数组件引入状态，纯函数不能有状态，所以把状态放入钩子里面
+
+        2. useEffect副作用
+
+        3. useReducer
+
+        4. useContext 共享状态钩子
+
+        5. 自定义hook函数
+
+
 11. http
 
     1.  三次握手
