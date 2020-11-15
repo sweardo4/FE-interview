@@ -466,19 +466,30 @@
 
     5.  react后端渲染
 
-    6.  hook 函数开发组件，完全不使用class 那一套, react 未来
+    6.  hook react16.8新增函数开发组件，完全不使用class那一套, react 未来
 
         1. useState 状态钩子
         
             用于函数组件引入状态，纯函数不能有状态，所以把状态放入钩子里面
 
-        2. useEffect副作用
+            const [count, setCount] = useState(0)
 
-        3. useReducer
+            count时状态 setCount时设置count的方法
+
+        2. useEffect副作用， useLayoutEffect 
+
+        3. useReducer 当 useState 复杂的状态逻辑涉及多个子值或下一个状态取决于前一个状态时，通常 useReducer 更可取。useReduce 还可以让您优化触发深度更新的组件的性能
 
         4. useContext 共享状态钩子
 
-        5. 自定义hook函数
+        5. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代
+        
+        码。useImperativeHandle 应当与 forwardRef 一起使用，
+
+        6. 自定义hook函数
+
+    7. 其他问题
+        1. useRef ，forwardRef，createRef区别 
 
 
 11. http
