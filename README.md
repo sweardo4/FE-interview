@@ -91,8 +91,7 @@
 
             1.  alt是\<img\>标签的特有属性，当图片加载失败时显示alt文字
 
-            2.  title属性是global
-                attribute之一，作用是提供建议性的信息，通常是鼠标滑动到元素上是显示
+            2.  title属性是global attribute之一，作用是提供建议性的信息，通常是鼠标滑动到元素上是显示
 
         5.  DOCTYPE 作用
 
@@ -134,11 +133,21 @@
 
         1.  盒子模型
 
-            1.  标准盒子模型
+            1.  W3C标准盒子模型
+
+                属性width,height只包含内容content，不包含border和padding。
 
             2.  IE盒子模型
 
-        2.  文档流
+                属性width,height包含border和padding，指的是content+padding+border。
+
+        2.  文档流和文本流
+
+            文档流是相对于盒子模型讲的
+
+            文本流是相对于文子段落讲的
+
+            元素浮动之后，会让它跳出文档流，也就是说当它后面还有元素时，其他元素会无视它所占据了的区域，直接在它身下布局。但是文字却会认同浮动元素所占据的区域，围绕它布局，也就是没有拖出文本流。但是绝对定位后，不仅元素盒子会拖出文档流，文字也会拖出文本流。那么后面元素的文本就不会在认同它的区域位置，会直接在它后面布局，不会在环绕。当然你可以使用 index-z 来让底部的元素到上面来，类似于一个图层的概念
 
         3.  选择器
 
@@ -158,15 +167,24 @@
 
                 7.  清除浮动
 
-            3.  绝对定位position
+            3.  定位position属性： 把元素放置到一个静态的、相对的、绝对的、或固定的位置中。
 
                 8.  Static
 
-                9.  Relative
+                    position的默认值。没有定位，元素出现在正常的文档流中。
 
-                10. Absolute
+                9.  Relative(相对定位）
 
-                11. Fixed
+                    生成相对定位的元素，相对于其正常（原来）位置进行定位。元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。可以微调，不影响其他。top,bottom,left,right的值确定定位元素的位置。
+
+
+                10. Absolute（绝对定位）
+
+                    生成绝对定位的元素，相对最近的一个position不为static的祖先元素进行偏移。不占据文档流的位置。经常用来布局。top,bottom,left,right的值确定定位元素的位置。
+
+                11. Fixed（固定定位）
+
+                    生成绝对定位的元素，相对于浏览器窗口进行定位。top,bottom,left,right的值确定定位元素的位置。可以做对话框或者悬浮广告。
 
         5.  Display
 
@@ -186,9 +204,34 @@
 
             8.  Flex
 
-                12. 作用在flex容器上
+                作用在flex容器上
 
-                13. 作用在flex子项上
+                flex-direction: 属性决定主轴的方向（即项目的排列方向）。
+
+                flex-wrap: 默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+
+                flex-flow: 属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+
+                justify-content: 属性定义了项目在主轴上的对齐方式。
+
+                align-items: 属性定义项目在交叉轴上如何对齐。
+
+                align-content: 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+                
+
+                作用在flex子项上
+
+                order: 定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+
+                flex-grow: 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+
+                flex-shrink: 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+
+                flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+
+                flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+
+                align-self: 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
 
         6.  透明
 
@@ -466,15 +509,19 @@
 
     5.  react后端渲染
 
-    6.  hook 函数开发组件，完全不使用class 那一套, react 未来
+    6.  hook react16.8新增函数开发组件，完全不使用class那一套, react 未来
 
         1. useState 状态钩子
         
             用于函数组件引入状态，纯函数不能有状态，所以把状态放入钩子里面
 
-        2. useEffect副作用
+            const [count, setCount] = useState(0)
 
-        3. useReducer
+            count时状态 setCount时设置count的方法
+
+        2. useEffect副作用， useLayoutEffect 
+
+        3. useReducer 当 useState 复杂的状态逻辑涉及多个子值或下一个状态取决于前一个状态时，通常 useReducer 更可取。useReduce 还可以让您优化触发深度更新的组件的性能
 
         4. useContext 共享状态钩子
 
@@ -487,7 +534,14 @@
             渲染周期之间共享数据存储
 
         6. useMemo
-        7. 自定义hook函数
+        
+        7. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代码。useImperativeHandle 应当与 forwardRef 一起使用，
+
+        8. 自定义hook函数
+
+
+    7. 其他问题
+        1. useRef ，forwardRef，createRef区别 
 
 
 11. http
