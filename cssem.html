@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       .p1 {font-size: 16px; line-height: 32px;}/**{font-size: 16px; line-height: 32px;}*/
+        .s1 {font-size: 2em;}/**{font-size: 32px; line-height: 32px;}*/
+        .s2 {font-size: 2em; line-height: 2em;}/**{font-size: 32px; line-height: 64px;}*/
+
+        .p2 {font-size: 16px; line-height: 2;} /**{font-size: 16px; line-height: 32px;}*/
+        .s5 {font-size: 2em;}/**{font-size: 32px; line-height: 64px;}*/
+        .s6 {font-size: 2em; line-height: 2em;}/**{font-size: 32px; line-height: 64px;} */ 
+    </style>
+  </head>
+  <body>
+    <div class="p1">
+        <div class="s1">1</div>
+        <div class="s2">1</div>
+    </div>
+    <div class="p2">
+        <div class="s5">1</div>
+        <div class="s6">em应用行高时等自身字体大小 所以此处2em相当于自身字体大小的两倍</div>
+    </div>
+  </body>
+</html>

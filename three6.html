@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>三栏双飞翼布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+			width: 100%;
+			height: 30px;
+			background: red;
+		}
+
+		.content {
+			overflow: hidden;
+		}
+
+		.footer {
+			width: 100%;
+			height: 30px;
+			background: red;
+		}
+
+		.middle {			
+			width: 100%;
+			float: left;
+		}
+
+        .inner-middle,.left,.right{
+            height: 100px;
+        }
+        .inner-middle{
+			width:100%;
+			background: green;			
+		}
+        .left,.right{
+            width: 100px;
+            float: left;
+        }
+		.left {
+			margin-left: -100%;
+			background: yellow;
+		}
+		.right {			
+			margin-left: -100px;
+			background: pink
+		}
+    </style>
+</head>
+
+<body>
+    <div class="header">H</div>
+    <div class="content">
+            <div class="middle">
+                <div class="inner-middle">czasdads12312312312adasdsadsadasdsad</div>
+            </div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    <div class="footer">F</div>
+</body>
+
+</html>

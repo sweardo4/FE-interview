@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       label input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            margin: 0;
+        }
+
+        label input[type="radio"]:after {
+            display: block;
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            border: 2px solid #bfbfbf;
+        }
+
+        label input[type="radio"]:checked:after {
+            background: #0593d3;
+            border: 2px solid #fff;
+        }
+    </style>
+  </head>
+  <body>
+      <div> 
+        <label><input name="year" type="radio"><span>2011</span></label>
+        <label><input name="year" type="radio" checked><span>2012</span></label>
+        <label><input name="year" type="radio"><span>2013</span></label>
+      </div>
+  </body>
+</html>

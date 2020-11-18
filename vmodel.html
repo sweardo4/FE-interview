@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>v-model原理</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <p>输入<input value="1000" oninput="onchange1()" /></p>
+        <p id='show'>数据</p>
+    </div>
+    <script>
+        function onchange1(){
+            var input = document.getElementsByTagName('input')[0]
+            var id = document.getElementById('show')
+            id.innerText = input.value
+            console.log(id.innerText, id.innerText, id.outerHTML)
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       .existed{
+        margin: 20px;
+        padding: 20px;
+        border: solid 1px red;
+        background: yellow;
+        background-clip: content-box;
+        /**background-clip 属性规定背景的绘制区域。
+           border-box	背景被裁剪到边框盒。
+           padding-box	背景被裁剪到内边距框。	
+           content-box	背景被裁剪到内容框。**/
+        }
+
+        .parent{
+            line-height: 1;
+            font-size: 14px;
+           
+            border: solid 1px yellow;
+          }
+          .child{
+            font-size: 30px;
+            vertical-align: middle;
+           
+            border: solid 1px blue;
+          }
+          .inline-block{
+            display: inline-block;
+            overflow: hidden;
+           
+            border: solid 1px red;
+          }
+          .other{
+            border: solid 1px green;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="p1">
+        <div>before bababababababa</div>
+        <div class="existed">babababababababababa</div>
+        <div>after bababababababa</div>
+    </div>
+    <div class="p2">
+        <div>before bababababababa</div>
+        <span class="existed">babababababababababa</span>
+        <div>after bababababababa</div>
+    </div>
+
+
+    <div>
+        <span class="parent">
+            <span class="child">
+              <span class="inline-block">display:inline-block元素</span>
+              xp子元素的文字
+            </span>
+            xp父元素的文字
+          </span>
+          <div class="other">其他元素</div>
+    </div>
+    <div>
+        <div style="height: 100px;width: 100px;float: left;background: lightblue">
+            我是一个左浮动的元素 one
+        </div>
+        <div style="width: 200px; height: 200px;background: grey">
+            我是一个没有设置浮动,也没有触发 BFC,我想你这次只是生气时间久了一点，是的。
+        </div>
+        
+        <div style="height: 100px;width: 100px;float: left;background: lightblue">
+            我是一个左浮动的元素 two
+        </div>
+        <div style="width: 200px; height: 200px;background: grey;overflow:hidden">
+            我是一个没有设置浮动,触发 BFC 元素,我想你这次只是生气时间久了一点，是的。
+        </div>
+    
+    </div>
+  </body>
+</html>

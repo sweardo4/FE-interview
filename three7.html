@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>垂直方向相邻块元素外边距重叠</title>
+    <style>
+        .header, .footer{
+            padding: 20px;
+            width: 200px;
+            background-color: blue;
+            margin: 100px;
+            
+        }
+        .container{
+            overflow: hidden;
+            zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        关于相邻块元素外边距叠加问题的解决方法有很多
+        1: 给两个相邻块级元素添加一个父元素　父元素没有边距且设置生成BFC
+        2: 可以给相邻元素不设置margin, 设置成padding
+        3: 可以只设置第一块元素双倍下边距
+        4: 可以在两个相邻块元素之间加一个空元素／标签
+        ...
+    </pre>
+    <div class="container">
+        <div class="header">H</div>
+    </div>
+    <div class="container">
+        <div class="footer">F</div>
+    </div>
+</body>
+
+</html>

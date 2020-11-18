@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+        p{
+            padding: 0;
+            margin: 0;
+        }
+        .left{
+            width: 50%;
+            float: left;
+            border-right: 1px solid red;
+        }
+        .right{
+            float: left;
+            padding-left: 10px;
+        }
+        .transfrom{
+            margin-bottom: 20px;
+        }
+        .transfrom img{
+            margin-left: 200px;
+        }
+        .transfrom1 img{
+           transform: rotate(30deg);
+        }
+        .transfrom2 img{
+           transform: scale(0.5);
+        }
+        .transfrom3 img{
+           transform: skew(30deg);
+        }
+        .transfrom4 img{
+           transform: translate(200px, 0px);
+        }
+        .transfrom5 img{
+           transform-origin: 200px 200px; /**设置基准点**/
+           transform: rotate(30deg) translate(10px, 10px) scale(0.8) ;
+        }
+        .transfrom6 img{
+           transform: rotate(90deg) translate(100px, -50%) scale(0.8) ;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="left">
+        <h2>transfrom</h2>
+        <div class="transfrom transfrom1">
+            <p>transfrom:rotate 旋转</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="transfrom transfrom2">
+            <p>transfrom:scale 缩放</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="transfrom transfrom3">
+            <p>transfrom:skew 倾斜</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="transfrom transfrom4">
+            <p>transfrom:translate 移动</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="transfrom transfrom5">
+            <p>transfrom:transform-origin 基准点</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="transfrom transfrom6">
+            <p>transfrom:组合变形</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+      </div>
+      <style>
+          .animation img{
+            position: relative;
+            animation-duration: 3s;
+            animation-name:  one-an;
+          }
+          .animation2 img{
+            animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+          }
+          .animation3 img{
+            animation-delay: 1s;
+            animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+          }
+          .animation4 img{
+            animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            animation-iteration-count: 3;
+          }
+          .animation5 img{
+            animation-timing-function: cubic-bezier(.75,1.16,0,-0.85);
+            animation-direction: reverse;
+          }
+          @keyframes one-an {
+                0%   {background: red; left:0px; top:0px;}
+                25%  {background: yellow; left:300px; top:0px;}
+                50%  {background: blue; left:300px; top:100px;}
+                75%  {background: green; left:0px; top:100px;}
+                100% {background: red; left:0px; top:0px;}
+        }
+
+      </style>
+      <div class="right">
+        <h2>animation</h2>
+        <pre>
+            animation-name    规定需要绑定到选择器的 keyframe 名称
+            animation-duration    规定完成动画所花费的时间，以秒或毫秒计。
+            animation-timing-function    规定动画的速度曲线。
+            animation-delay    规定在动画开始之前的延迟。
+            animation-iteration-count    规定动画应该播放的次数。
+            animation-direction    规定是否应该轮流反向播放动画。
+        </pre>
+        <div class="animation animation1">
+            <p>animation-name:绑定到选择器的 keyframe 名称</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="animation animation2">
+            <p>animation-timing-function : 规定动画的速度曲线。</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="animation animation3">
+            <p>animation-delay    规定在动画开始之前的延迟。</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="animation animation4">
+            <p> animation-iteration-count    规定动画应该播放的次数。</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <div class="animation animation5">
+            <p>animation-direction    规定是否应该轮流反向播放动画。</p>
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+        </div>
+        <style>
+            .zji{
+                margin-top: 20px;
+                background: url('./lipin.png') no-repeat;
+                background-size: 1000px;
+                width: 200px;
+                height: 200px;
+                background-position: 9% 50%;
+                animation: smile 0.5s step-end infinite;
+            }
+            @keyframes smile {
+                0%{ background-position: 9% 50%; }
+                33%{ background-position: 40% 50%; }
+                66%{ background-position: 71% 50%; }
+                100%{ background-position: 99% 50%; }
+            }
+
+            .smail{
+                background: url(./girl.png) no-repeat;
+                width: 200px;
+                height: 134px;
+                background-position: 0 0;
+                margin-top: -10px;
+                animation: smile2 2s steps(1, start) infinite;
+            }
+            @keyframes smile2 {
+                0%{ background-position: 0 0; }
+                20%{ background-position: 0 20%; }
+                40%{ background-position: 0 40%; }
+                60%{ background-position: 0 60%; }
+                80%{ background-position: 0 80%; }
+                100%{ background-position: 0 100%; }
+            }
+        </style>
+        <div class="animation6">
+            <p>animation例子:逐帧动画实现</p>
+            <div class="zji"></div>
+            <div class="smail"></div>
+        </div>
+      </div>
+      
+  </body>
+</html>

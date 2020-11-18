@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        aside{
+            width: 100px;
+            background-color: blueviolet;
+            min-height: 200px;
+            position: absolute;
+        }
+        .center{
+          position: absolute;
+          left: 100px;
+          right: 100px;
+          height: 500px;
+          background-color: blue;
+        }
+        .left{
+          left: 0;
+        }
+        .right{
+          right: 0;;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="left"></aside>
+      <main class="center">
+          <h1>绝对定位解决方案</h1>
+          <p>左右区域分别postion：absolute，固定到左右两边</p>
+          <p>中间区域postion：absolute；left：300px; right: 300px</p>
+          <p>给总的宽度加一个min-width，不然缩小窗口会有毛病</p>
+      </main>
+      <aside class="right"></aside>
+    </div>
+  </body>
+</html>

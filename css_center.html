@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       .block{
+           width: 300px;
+           margin: 0 auto;
+       }
+       .p1{
+           text-align: center;
+       }
+       .p2{
+           text-align: center;
+       }
+    </style>
+  </head>
+  <body>
+    <div class="p1">
+        <span class="inline">行级元素水平居中 只需要父级设置text-align:center就行</span>
+        <div class="block">块级元素水平居中 需要设置宽度</div>
+    </div>
+    <div class="p2">
+        <!-- 图片水平居中 图片是行内块级元素 所以设置 -->
+        <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1577674099&di=bd14e5240d3bb8eeabb5b32d766a6bfe&src=http://img3.xiazaizhijia.com/walls/20161128/mid_602731e99b8fffe.jpg" alt="">
+    </div>
+  </body>
+</html>

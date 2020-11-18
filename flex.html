@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       .left,.center,.right{
+           width: 300px;
+           background-color: red;
+       }
+    </style>
+  </head>
+  <body>
+<!-- flex弹性布局
+以下6个属性设置在容器上。
+
+flex-direction　属性决定主轴的方向（即项目的排列方向）。　flex-direction: row | row-reverse | column | column-reverse;
+flex-wrap属性定义，如果一条轴线排不下，如何换行。　flex-wrap: nowrap | wrap | wrap-reverse;
+flex-flow　属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+justify-content　属性定义了项目在主轴上的对齐方式。justify-content: flex-start | flex-end | center | space-between | space-around;
+align-items　属性定义项目在交叉轴上如何对齐。　align-items: flex-start | flex-end | center | baseline | stretch
+align-content　定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+以下6个属性设置在项目上。
+
+order　定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0　　order: <integer>;
+flex-grow　属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大　flex-grow: <number>;　如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。 
+flex-shrink　属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。　flex-shrink: <number>;
+flex-basis　属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。flex-basis: <length> | auto;
+flex　flex-grow, flex-shrink 和 flex-basis的简写　属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+align-self　允许单个项目有与其他项目不一样的对齐方式align-self: auto | flex-start | flex-end | center | baseline | stretch;
+ -->
+    <div class="wrapper">
+      <aside class="left"></aside>
+      <main class="center">
+        <h1>flex布局学习</h1>
+        <p>包裹这个3个块的父元素display: flex; 中间的元素flex: 1;</p>
+      </main>
+      <aside class="right"></aside>
+    </div>
+  </body>
+</html>
