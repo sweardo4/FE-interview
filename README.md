@@ -525,11 +525,20 @@
 
         4. useContext 共享状态钩子
 
-        5. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代
-        
-        码。useImperativeHandle 应当与 forwardRef 一起使用，
+        5. useRef
 
-        6. 自定义hook函数
+            获取dom元素节点
+
+            获取自组件实例
+
+            渲染周期之间共享数据存储
+
+        6. useMemo
+        
+        7. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代码。useImperativeHandle 应当与 forwardRef 一起使用，
+
+        8. 自定义hook函数
+
 
     7. 其他问题
         1. useRef ，forwardRef，createRef区别 
