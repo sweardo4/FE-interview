@@ -24,22 +24,32 @@
 
             1.  首先，开源浏览器一般以8k每块下载html页面。
 
-                然后解析页面生成DOM树，遇到css标签或JS脚本标签就新起线程去下载他们，并继续构建DOM。
+               解析
+                    根据html文件生成DOM tree
 
-                下载完后解析CSS为CSS规则树，浏览器结合CSS规则树和DOM树生成Render
-                Tree。注意：构建CSS Object Model（CSSOM)会阻塞JavaScript的执行。
+                    根据css文件产生css规则树(CSS Rule Tree)
 
-                JavaScript的执行也会阻塞DOM的构建。
+                    解析JavaScript脚本
 
-                JavaScript下载后可以通过DOM API修改DOM，通过CSSOM
-                API修改样式作用域Render Tree。
+               构建渲染树(Rendering tree)
 
-                每次修改会造成Render Tree的重新布局和重绘。
+                    通过DOM API和CSSOM API来操作DOM Tree和CSS Rule Tree 构建Rendering tree
 
-                只要修改DOM或修改了元素的形状或大小，就会触发Reflow，单纯修改元素的颜色只需Repaint一下（调用操作系统Native
-                GUI的API绘制）。
+                    Rendering Tree 渲染树并不等同于DOM树，因为一些像Header或display:none的东西就没必要放在渲染树中了。
+
+                    CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element。也就是DOM结点。也就是所谓的Frame。
+
+                    然后，计算每个Frame（也就是每个Element）的位置，这又叫layout和reflow过程。
+
+               绘制
+
+                    最后通过调用操作系统Native GUI的API绘制
 
         2.  浏览器缓存技术
+
+        3. DOM tree 生成内部原理
+
+            字节数据 => 字符串 => tokens => Nodes => Dom tree
 
     3.  常见浏览器内核
 
@@ -217,7 +227,7 @@
                 align-items: 属性定义项目在交叉轴上如何对齐。
 
                 align-content: 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-                
+
 
                 作用在flex子项上
 
@@ -232,6 +242,10 @@
                 flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
 
                 align-self: 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+
+                flex出现是为了解决什么问题？
+
+                    响应式问题，移动端适配问题，float和行内块不适合布局的问题,float一开始不是用来布局的而是文字环绕
 
         6.  透明
 
