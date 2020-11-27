@@ -18,7 +18,7 @@
 
     2.  Html5
 
-        ![](e8bc40d7006f13fa0a191d774b7db36a_r.jpg)
+        ![](imgs/e8bc40d7006f13fa0a191d774b7db36a_r.jpg)
 
         1.  浏览器加载原理
 
@@ -162,14 +162,49 @@
         3.  选择器
 
             1.  选择器
+                
+                基本选择器: * 通用选择器匹配所有， 标签选择器， class选择器，id选择器
 
-            2.  继承性
+                ![](imgs/shuxingxuanze2.png)
+
+                ![](imgs/weilei2.png)
+
+                ![](imgs/weiyuansu2.png)
+
+                ![](imgs/tongji3.png)
+
+                ![](imgs/shuxing3.png)
+
+                ![](imgs/yonghuweilei3.png)
+
+                ![](imgs/jiegouweilei3.png)
+
+                ![](imgs/fanxuanweilei3.png)
+
 
             3.  优先级算法计算
 
+               算法规则 由(A, B, C, D)决定
+
+                  如果存在内联样式，那么 A = 1, 否则 A = 0;
+
+                  B 的值等于 ID选择器 出现的次数;
+
+                  C 的值等于 类选择器 和 属性选择器 和 伪类 出现的总次数;
+
+                  D 的值等于 标签选择器 和 伪元素 出现的总次数 。
+
+               比较规则
+
+                  从左往右依次进行比较 ，较大者胜出，如果相等，则继续往右移动一位进行比较 。如果4位全部相等，则后面的会覆盖前面的.
+
+                特殊情况
+
+                    !important 万不得已下使用
+
         4.  三种定位机制
 
-            1.  普通流
+            1.  普通流 也叫正常流
 
             2.  浮动
 
@@ -251,6 +286,22 @@
 
         7.  块级格式上下文BFC
 
+            BFC布局规则
+
+                内部的Box会在垂直方向，一个接一个地放置。
+
+                Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+
+                每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+                BFC的区域不会与float box重叠。
+
+                BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+                
+                计算BFC的高度时，浮动元素也参与计算
+
+            作用: 清除浮动，防止margin重叠等等
+            [BFC示例](BFC_example.html)
+
         8.  Line-height
 
             1.  理解
@@ -271,11 +322,20 @@
 
         10. Link和import的区别
 
+        11. css属性继承性
+
+
     2.  Css3
 
     3.  Css优化，提高性能
 
 3.  Scss
+
+    变量
+
+    循环
+
+    混入
 
 4.  Webpack
 

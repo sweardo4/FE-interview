@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BFC</title>
+    <style>
+       .container{
+         width: 100%;
+       }
+       .left{
+         height: 200px;
+         width: 20%;
+         float: left;
+         background-color: aquamarine;
+       }
+       .right{
+         height: 200px;
+         width: 30%;
+         float: right;
+         background-color: aquamarine;
+       }
+       .main{
+         height: 300px;
+         overflow: hidden;
+         background-color: red;
+       }
+
+       .par{
+         width: 300px;
+         border: 2px solid #fab;
+         overflow: hidden;
+       }
+       .child{
+         height: 200px;
+         width: 100px;
+         float: left;
+         border: 2px solid yellow;
+       }
+       .chui p{
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align: center;
+        margin: 100px;
+       }
+       .wrap{
+         overflow: hidden;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>自适应两栏布局</h3>
+    <div class="contaner">
+      <div class="left"></div>
+      <div class="main"></div>
+    </div>
+    <h3>自适应三栏布局</h3>
+    <div class="contaner">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="main"></div>
+    </div>
+    <h3>浮动造成父元素塌陷(清除浮动)</h3>
+    <div class="par">
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+
+   
+    <h3>防止垂直 margin 重叠</h3>
+    <div class="chui">
+      <p>Haha</p>
+      <p>Hehe</p>
+    </div>
+    <br />
+    <div class="chui">
+      <p>Haha</p>
+      <div class="wrap">
+          <p>Hehe</p>
+      </div>
+    </div>
+  </body>
+</html>
