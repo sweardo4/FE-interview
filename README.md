@@ -198,7 +198,7 @@
 
                   从左往右依次进行比较 ，较大者胜出，如果相等，则继续往右移动一位进行比较 。如果4位全部相等，则后面的会覆盖前面的.
 
-                特殊情况
+               特殊情况
 
                     !important 万不得已下使用
 
@@ -296,7 +296,7 @@
                 BFC的区域不会与float box重叠。
 
                 BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
-                
+
                 计算BFC的高度时，浮动元素也参与计算
 
             作用: 清除浮动，防止margin重叠等等
@@ -304,26 +304,57 @@
 
         8.  Line-height
 
-            1.  理解
+            1.  理解(行高指的是什么?)
 
-            2.  单位，纯数字，百分比三种区别
+                两行文字基线之间的距离称之为行高
+
+                那么基线又指的什么呢？ 标准是x字符的下端沿(中文没有标准)
+
+            2.  默认normal,单位，纯数字，百分比三种区别
+
+                normal: 根据字体，浏览器，操作系统都可能不同。
+
+                单位: px 像素大小
+
+                数字: 行高=数字*font-size
+
+                百分比: 行高= 百分比*font-size
 
         9.  Css单位
 
-            1.  px
+            1.  px 像素单位
 
-            2.  %
+            2.  % 父元素宽度百分数
 
-            3.  Em
+            3.  Em 1em=父元素font-size
 
-            4.  Rem
+            4.  Rem 1rem=根元素font-size
 
             5.  Vw,vh,vmin,vmax
+
+                100vw = 视口宽度
+
+                100vh = 视口高度
+
+                vmin的值是当前vw和vh中较小的值。
+
+                vmax的值是当前vw和vh中较大的值。
 
         10. Link和import的区别
 
         11. css属性继承性
 
+        12. 文本换行问题
+
+            word-break: break-all;只对英文起作用，以字母作为换行依据
+
+            word-wrap: break-word; 只对英文起作用，以单词作为换行依据
+
+            white-space: pre-wrap; 只对中文起作用，强制换行
+
+            white-space: nowrap; 强制不换行，都起作用
+
+            white-space: nowrap; overflow:hidden; text-overflow:ellipsis;不换行，超出部分隐藏且以省略号形式出现（部分浏览器支持） 
 
     2.  Css3
 
@@ -337,6 +368,8 @@
 
     混入
 
+    函数
+    
 4.  Webpack
 
     1.  Webpack基本用法
