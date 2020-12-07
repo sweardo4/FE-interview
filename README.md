@@ -640,11 +640,17 @@
 
             渲染周期之间共享数据存储
 
-        6. useMemo
-        
-        7. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代码。useImperativeHandle 应当与 forwardRef 一起使用，
+        6. useCallback
 
-        8. 自定义hook函数
+            优化性能: 1.当父组件数据变化时，使子组件不至于重新渲染. 也就是可以控制子组件渲染次数
+
+        7. useMemo 避免在每次渲染时都进行高开销的计算的优化的策略
+
+            返回一个 memoized 值。在依赖参数不变的的情况返回的是上次第一次计算的值，优化针对于当前组件高开销的计算，具有记忆功能。
+        
+        8. useImperativeHandle 可以让你在使用 ref 时自定义暴露给父组件的实例值，减少暴露给父组件过多属性值。在大多数情况下，应当避免使用 ref 这样的命令式代码。useImperativeHandle 应当与 forwardRef 一起使用，
+
+        9. 自定义hook函数
 
 
     7. 其他问题
