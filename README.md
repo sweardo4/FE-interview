@@ -626,7 +626,9 @@
 
             count时状态 setCount时设置count的方法
 
-        2. useEffect副作用， useLayoutEffect 
+        2. useEffect副作用 可以解决99%的问题，
+
+           useLayoutEffect 当dom更新后，会同时出发执行该函数，会阻止浏览器的渲染，等改函数执行之后，将一起渲染界面，会产生视觉阻塞，尽量使用useEffect代替。谨慎使用
 
         3. useReducer 当 useState 复杂的状态逻辑涉及多个子值或下一个状态取决于前一个状态时，通常 useReducer 更可取。useReduce 还可以让您优化触发深度更新的组件的性能
 
@@ -639,6 +641,27 @@
             获取自组件实例
 
             渲染周期之间共享数据存储
+
+            React.forwardRef 高阶组件， 当我们想要操作子组件里面的ref时，可以使用此组件来转发ref, 示例如下:
+
+            ```js
+                const Index = () => {
+                    const inputEl = useRef(null);
+                    const handleFocus = () => {
+                        inputEl.current.focus();
+                    };
+                    return (
+                        <>
+                            <Child ref={inputEl} />
+                            <button onClick={handleFocus}>Focus</button>
+                        </>
+                    );
+                };
+
+                const Child = forwardRef((props, ref) => {
+                    return <input ref={ref} />;
+                });
+            ```
 
         6. useCallback
 
