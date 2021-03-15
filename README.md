@@ -520,6 +520,8 @@
 
         9.  Set，map，weakmap，weakset
 
+        10. generator 深入理解
+
     4.  Es7
 
         1.  Async await
