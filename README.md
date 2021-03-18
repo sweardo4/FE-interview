@@ -601,10 +601,38 @@
         8.  指令
 
             1.  通用指令
+                v-if
+
+                v-show
 
             2.  自定义指令
+                bind: 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。
+
+                inserted: 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。
+
+                update: 所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的模板更新
+
+                componentUpdated: 指令所在组件的 VNode 及其子 VNode 全部更新后调用。
+
+                unbind: 只调用一次，指令与元素解绑时调用
+
+            3. 指令引入
+
+                全局引入
+
+                    Vue.directive('name', {生命周期})定义指令
+
+                    Vue.use(引入指令)
+
+                局部引入
+
+                    组件内使用directives属性定义
 
         9.  计算属性和监听器computed和watch
+
+            computed 属性监听
+
+            watch 复杂事件监听
 
         10. Prop
 
@@ -614,7 +642,13 @@
 
         13. 混入
 
+            mixin
+
+            mixins
+
         14. 过滤器
+
+            filter
 
         15. 其他
 
@@ -648,17 +682,32 @@
 
             1.  History
 
-            2.  Hash
+            2.  Hash 
 
         2.  哨兵函数
 
             1.  全局哨兵函数
 
+                beforeEach(to, from, next)
+
+                afterEach(to, from, next)
+
             2.  组件内哨兵函数
+
+                beforeRouteEnter
+
+                beforeRouteLeave
+
+                beforeRouteUpdate
+                
 
         3.  路由传参
 
         4.  路由跳转
+
+            方式1：this.$router.push(‘路由地址’)
+            
+            方式2：<router-link to="路由地址"></router-link>
 
     4.  Vue后端渲染VUE SSR
 
