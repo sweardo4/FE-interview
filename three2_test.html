@@ -24,8 +24,6 @@
           float: left;
           width: 100%;
           height: 900px;
-          overflow: hidden;
-          position: relative;
           background: blueviolet;
         }
         .left{
@@ -46,13 +44,12 @@
   <body>
     <div class="wrapper">
       <main class="center">
-          <div style="display: inline-block;">hdhdhdh</div>
-          <h1>浮动解决方案 完善</h1>
+          <h1>浮动解决方案 完善 圣杯布局</h1>
           <p>方法：left和right写在center前面，并且分别左右浮动；</p>
           <p>
             中间的这个div因为是块级元素，所以在水平方向上按照他的包容块自动撑开。
           </p>
-          <p>简单，但是中心部分过长下面会溢出，然后文字就会跑到两边去。</p>
+          <p>此时中心部分过长下面会溢出</p>
       </main>
       <aside class="left"></aside>
       <aside class="right"></aside>

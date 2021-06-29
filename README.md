@@ -386,7 +386,7 @@
 
             1.  值类型
 
-                14. Boolean， number，string，null，undefined，symbol（es6新加）
+                14. Boolean，number，string，null，undefined，symbol（es6新加）
 
             2.  引用类型
 
@@ -854,3 +854,28 @@
 19. web安全
 
 20. docker
+
+21. 垃圾回收机制
+
+    形成原因： 栈只保存简单数据类型的内存， 由操作系统自动分配和释放。
+             堆空间中的内存由于大小不固定系统无法进行自动释放，这个时候就需要js引擎的垃圾回收机制来手动释放这些内存
+
+    垃圾回收算法： 
+
+        新生代： 任何对象的声明分配到的内存，都会先被放置在新生代中。
+
+            Scavenge算法：典型的牺牲空间换取时间的复制算法
+
+                from-space  <----> to-space
+
+                首先找到from-space中的存活的对象， 复制到to-space中，然后释放from-space非存活对象的内存。
+                最后将from和to数据进行互换。这样循环往复。第一次垃圾回收之后存活对象会从nursery子代转到intermediate 子代，再一次垃圾回收之后如果还存活将会把对象从intermediate 子代移动到老生代(晋升)
+
+            对象的可达性(判断对象存活依据): mark-and-sweep算法
+                从根(global)找到所有他下边的引用对象并标记他们， 没有被标记的对象将会成为孤岛
+
+
+
+
+
+        老生代：

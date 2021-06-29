@@ -24,3 +24,15 @@ for (let index = 1; index < arr.length; index++) {
         console.log(index)
     }, 1000*index)
 }
+
+// 防抖2 可以接受参数的
+
+function debounce2(func, wait=50){
+    let timer = 0;
+    return function(...args){
+        if(timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, wait);
+    }
+}
